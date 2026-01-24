@@ -7,8 +7,8 @@
     <button onclick="calculateSum()">Calculate</button>
     
     <p>Cone Height: <span id="cone-height-display"></span></p>
-    <p>Volume: <span id="volume-display"></span></p>
     <p>Cone Base Area: <span id="cone-base-area-display"></span></p>
+    <p>Volume: <span id="volume-display"></span></p>
 <script>
 function calculateSum()
 {
@@ -19,5 +19,7 @@ function calculateSum()
     const H = h * d1/(d1-d2);
     document.getElementById('cone-height-display').textContent = H;
     //alert(H);
+    const B = Math.PI * (d1/2) ** 2;
+    document.getElementById('cone-base-area-display').textContent = B;
 }
 </script>
