@@ -4,13 +4,15 @@
 <input type="number" id="d1" placeholder="Enter d1">
 <input type="number" id="d2" placeholder="Enter d2">
 
-    <button onclick="calculateSum()">Add</button>
+    <button onclick="calculateSum()">Calculate</button>
     
     <p>Result: <span id="result-display"></span></p>
 <script>
 function calculateSum()
 {
     const h = document.getElementById('height').value
-    alert("Height:" + h);
+    const d1 = document.getElementById('d1').value
+    const d2 = document.getElementById('d2').value
+    alert("Height: " + h + "d1: " + d1 +"d2: " + d2);
 }
 </script>
