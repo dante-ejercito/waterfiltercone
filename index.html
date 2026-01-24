@@ -1,14 +1,16 @@
 <h1>Hi, Dante!</h1>
 <p>This is a website to find the volume and surface area of a cone packaging a water filter.</p>
-<input type="number" id="num1-input" placeholder="Enter first number">
-    <input type="number" id="num2-input" placeholder="Enter second number">
-    
+<input type="number" id="height" placeholder="Enter height">
+<input type="number" id="d1" placeholder="Enter d1">
+<input type="number" id="d2" placeholder="Enter d2">
+
     <button onclick="calculateSum()">Add</button>
     
     <p>Result: <span id="result-display"></span></p>
 <script>
 function calculateSum()
 {
-    alert("Hello");
+    const h = document.getElementById('height').value
+    alert("Height:" + h);
 }
 </script>
