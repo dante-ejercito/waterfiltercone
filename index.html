@@ -6,16 +6,18 @@
 
     <button onclick="calculateSum()">Calculate</button>
     
-    <p>Result: <span id="result-display"></span></p>
+    <p>Cone Height: <span id="cone-height-display"></span></p>
+    <p>Volume: <span id="volume-display"></span></p>
+    <p>Cone Base Area: <span id="cone-base-area-display"></span></p>
 <script>
 function calculateSum()
 {
     const h = document.getElementById('height').value
     const d1 = document.getElementById('d1').value
     const d2 = document.getElementById('d2').value
-    alert("Height: " + h + " d1: " + d1 +" d2: " + d2);
+    //alert("Height: " + h + " d1: " + d1 +" d2: " + d2);
     const H = h * d1/(d1-d2);
-    document.getElementById('result-display').textContent = H;
-    alert(H);
+    document.getElementById('cone-height-display').textContent = H;
+    //alert(H);
 }
 </script>
