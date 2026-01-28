@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Filter Cone Calculater</title>
-    <script scr="https://cdn.jsdelivr.net/npm/p5@1.11.11/lib/p5.min.js"></script>
+    <script scr="https://cdn.jsdelivr.net/npm/p5@2.1.2/lib/p5.min.js"></script>
 </head>
 
 <body>
     <h1>Water Filter Cone Calculater</h1>
     <p>This is a website to find the volume and surface area of a cone packaging a water filter.</p>
 
-    <p>Enter height (in.) <input type="number" id="height"></p>
+    <p>Enter height (in.) <input type="number" id="waterFilterHeight"></p>
     <p>Enter <i>d</i><sub>1</sub> (in.): <input type="number" id="d1"></p>
     <p>Enter <i>d</i><sub>2</sub> (in.): <input type="number" id="d2"></p>
 
@@ -26,7 +26,7 @@
 
     <script>
         function calculateSum() {
-            const h = document.getElementById('height').value
+            const h = document.getElementById('waterFilterHeight').value
             const d1 = document.getElementById('d1').value
             const d2 = document.getElementById('d2').value
             //alert("Height: " + h + " d1: " + d1 +" d2: " + d2);
