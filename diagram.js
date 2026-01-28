@@ -4,3 +4,7 @@ const canvasHeight = windowHeight / 2
 function setup() {
     createCanvas(canvasWidth, canvasHeight)
 }
+
+function draw() {
+
+}
