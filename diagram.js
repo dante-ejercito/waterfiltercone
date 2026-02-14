@@ -1,4 +1,4 @@
-const storedValues = JSON.parse(sessionStorage.getItem("storedValuesString"))
+const storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"))
 
 function setup() {
     const canvasWidth = windowWidth / 2
