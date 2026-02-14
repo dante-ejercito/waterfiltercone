@@ -1,3 +1,5 @@
+const storedValues = JSON.parse(sessionStorage.getItem("storedValuesString"))
+
 function setup() {
     const canvasWidth = windowWidth / 2
     const canvasHeight = windowHeight / 2
