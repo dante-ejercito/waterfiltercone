@@ -1,7 +1,8 @@
 function setup() {
     const canvasWidth = windowWidth / 2
     const canvasHeight = windowHeight / 2
-    createCanvas(canvasWidth, canvasHeight);
+    let canvas = createCanvas(canvasWidth, canvasHeight);
+    canvas.parent("diagramSide");
 }
 
 function windowResized() {
