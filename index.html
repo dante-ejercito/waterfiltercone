@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Filter Cone Diagram</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono|Muli">
     <script src="https://cdn.jsdelivr.net/npm/p5@2.1.2/lib/p5.min.js"></script>
 
     <style>
@@ -22,18 +24,30 @@
                 width: 100%;
             }
         }
+
+        h1 {
+            background-color: rgb(0, 121, 201);
+            margin: -10px -10px 0px;
+            padding: 25px;
+            font-size: 5vh;
+            font-family: "Space Mono", "Lucida Console", "Courier New", monospace;
+            text-align: center;
+            color: white;
+        }
+
+        p {
+            font-family: "Muli", sans-serif;
+        }
     </style>
 
 </head>
 
 <body>
+    <h1>Water Filter Cone Calculater</h1>
+
     <div class="flex-container">
         <div class="flex-item">
-            <h1>Water Filter Cone Calculater</h1>
-            <p>This is a website to find the volume and surface area of a cone packaging a water filter.This is a
-                website to find the volume and surface area of a cone packaging a water filter.This is a website to find
-                the volume and surface area of a cone packaging a water filter.This is a website to find the volume and
-                surface area of a cone packaging a water filter.</p>
+            <p>This is a website to find the volume and surface area of a cone packaging a water filter.</p>
 
             <p>Enter height (in.) <input type="number" id="waterFilterHeight"></p>
             <p>Enter <i>d</i><sub>1</sub> (in.): <input type="number" id="d1"></p>
