@@ -13,20 +13,11 @@
         .flex-container {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
         }
 
         .flex-item {
-            width: 50%;
-        }
-
-        @media (max-width: 1000px) {
-            .flex-item {
-                width: 100%;
-            }
-
-            .flex-container {
-                flex-direction: column;
-            }
+            width: 100%;
         }
 
         h1 {
@@ -60,7 +51,7 @@
     <h1>Water Filter Cone Calculater</h1>
 
     <div class="flex-container">
-        <div class="flex-item">
+        <div class="flex-item" id="textSide">
             <p style="padding-bottom: 10px;">This is a website to find the volume and surface area of a cone packaging a
                 water filter.</p>
 
@@ -74,24 +65,35 @@
             <br>
             <button
                 style="float: right; margin: 5% 2.5%; border: 0cap; border-radius: 25px; width: 95%; font: 4vh 'Space Mono', Muli, monospace; color: white; background-color: rgb(0, 121, 201);"
-                onclick="calculateSum(); storeValuesInSessionStorage();">Calculate</button>
+                onclick="setInitialStoredValues(); calculateSum(); storeValuesInSessionStorage(); showImage();">Calculate</button>
 
             <p style="padding-top: 100px;">Cone Height: <span id="cone-height-display"></span></p>
             <p>Cone Base Area: <span id="cone-base-area-display"></span></p>
             <p>Volume: <span id="volume-display"></span></p>
         </div>
 
-        <div class="flex-item" id="diagramSide">
+        <div class="flex-item" id="diagramSide" style="display: none;">
             <script src="diagram.js"></script>
         </div>
     </div>
 
     <script>
+        function showImage() {
+            document.getElementById("diagramSide").style.display = "inline";
+
+            if (window.innerWidth > 600) {
+                document.getElementsByClassName("flex-item")[0].style.width = "50%";
+                document.getElementsByClassName("flex-item")[1].style.width = "50%";
+            }
+        }
+
         const storedValues = {
             h: "",
             d1: "",
             d2: "",
             H: "",
+
+            textSideHeight: "",
 
             set calculatedh(h) {
                 this.h = h;
@@ -107,6 +109,10 @@
 
             set calculatedH(H) {
                 this.H = H;
+            },
+
+            set foundTextSideHeight(textSideHeight) {
+                this.textSideHeight = textSideHeight;
             }
         };
 
@@ -115,6 +121,9 @@
             storedValues.calculatedh = document.getElementById('waterFilterHeight').value;
             storedValues.calculatedd1 = document.getElementById('d1').value;
             storedValues.calculatedd2 = document.getElementById('d2').value;
+
+            alert(document.getElementById("textSide").clientHeight);
+            storedValues.foundTextSideHeight = document.getElementById("textSide").clientHeight;
         }
 
         function storeValuesInSessionStorage() {
@@ -123,8 +132,6 @@
         }
 
         function calculateSum() {
-            setInitialStoredValues();
-
             const h = storedValues.h;
             const d1 = storedValues.d1;
             const d2 = storedValues.d2;

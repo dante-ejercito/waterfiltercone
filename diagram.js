@@ -1,16 +1,24 @@
-const storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"))
+const storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"));
 
 function setup() {
-    const canvasWidth = windowWidth / 2
-    const canvasHeight = windowHeight / 2
-    let canvas = createCanvas(canvasWidth, canvasHeight);
+    const canvasWidth = rowOrColumnWidth();
+    const canvasHeight = storedValuesForDiagram.textSideHeight;
+    const canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent("diagramSide");
 }
 
 function windowResized() {
-    const canvasWidth = windowWidth / 2
-    const canvasHeight = windowHeight / 2
-    resizeCanvas(canvasWidth, canvasHeight)
+    let canvasWidth = rowOrColumnWidth();
+    let canvasHeight = storedValuesForDiagram.textSideHeight;
+    resizeCanvas(canvasWidth, canvasHeight);
+}
+
+function rowOrColumnWidth() {
+    if (windowWidth <= 600) {
+        return windowWidth;
+    } else {
+        return windowWidth / 2;
+    }
 }
 
 function draw() {
