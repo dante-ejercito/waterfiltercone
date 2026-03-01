@@ -23,7 +23,7 @@
     <p>Cone Base Area: <span id="cone-base-area-display"></span></p>
     <p>Volume: <span id="volume-display"></span></p>
 
-    <script src = "diagram.js"></script>
+    <script src="diagram.js"></script>
 
     <script>
         function calculateSum() {
