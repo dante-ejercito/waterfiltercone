@@ -1,28 +1,40 @@
-const storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"));
+var storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"))
+
+window.setInterval(getOrUpdateStoredValuesForDiagram, 1000);
+
+function getOrUpdateStoredValuesForDiagram() {
+    storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"));
+}
 
 function setup() {
-    const canvasWidth = rowOrColumnWidth();
-    const canvasHeight = storedValuesForDiagram.textSideHeight;
-    const canvas = createCanvas(canvasWidth, canvasHeight);
+    if (windowWidth <= 600) {
+        var canvasWidth = windowWidth;
+    } else {
+        var canvasWidth = windowWidth / 2;
+    }
+
+    console.log(storedValuesForDiagram.textSideHeight);
+    var canvasHeight = storedValuesForDiagram.textSideHeight;
+    var canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent("diagramSide");
 }
 
 function windowResized() {
-    let canvasWidth = rowOrColumnWidth();
-    let canvasHeight = storedValuesForDiagram.textSideHeight;
+    if (windowWidth <= 600) {
+        var canvasWidth = windowWidth;
+    } else {
+        var canvasWidth = windowWidth / 2;
+    }
+
+    var canvasHeight = storedValuesForDiagram.textSideHeight;
+
     resizeCanvas(canvasWidth, canvasHeight);
 }
 
-function rowOrColumnWidth() {
-    if (windowWidth <= 600) {
-        return windowWidth;
-    } else {
-        return windowWidth / 2;
-    }
-}
 
 function draw() {
     background("white");
+    strokeCap(ROUND);
 
     if (storedValuesForDiagram.H >= storedValuesForDiagram.r1) {
         var scaler = height * .75 / storedValuesForDiagram.H;
@@ -64,17 +76,26 @@ function draw() {
     stroke("green");
     point(centerOfCanvas, Hy1);
 
-    for (let heightOfScale = 0; heightOfScale < HLengthOnScreen; heightOfScale + scaler) {
-        var xOfScale = width * .95;
-        var newLiney1 = r1y + heightOfScale;
-        var newLiney2 = newLiney1 + scaler;
+    for (let heightOfScale = 0, count = 0; heightOfScale < HLengthOnScreen; heightOfScale = heightOfScale + scaler, count++) {
+        var xOfScale = width * .85;
+        var newLiney1 = r1y - heightOfScale;
+        var newLiney2 = newLiney1 - scaler;
 
-        if ((heightOfScale / scaler) % 2 == 1) {
+        if (count % 2 == 1) {
             stroke(105, 105, 105);
         } else {
             stroke(211, 211, 211);
         }
 
+        strokeCap(SQUARE);
         line(xOfScale, newLiney1, xOfScale, newLiney2);
+
+        var textHeight = scaler * .20;
+        var unitx = xOfScale + 15;
+        var unity = newLiney2 + (textHeight / 2);
+
+        textSize(textHeight);
+        stroke("white");
+        text(count, unitx, unity);
     }
 }
