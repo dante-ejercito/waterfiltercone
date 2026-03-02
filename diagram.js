@@ -99,3 +99,7 @@ function draw() {
         text(count, unitx, unity);
     }
 }
+
+function mouseWheel() {
+    return false;
+}
