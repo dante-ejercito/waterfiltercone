@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono|Muli">
     <script src="https://cdn.jsdelivr.net/npm/p5@2.1.2/lib/p5.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
     <style>
         .flex-container {
@@ -216,8 +217,28 @@
         point’s y-value is the height
         of the cone.</p>
 
+    <h2>Math</h2>
 
+    <p>We will need to know the width of the widest part and another part. The widest part is usually the part that
+        connects to
+        the incoming and/or outgoing water and at the end. For the other part, due to the general shape of water
+        filters, we
+        will use the other end.</p>
 
+    <p>Let \(d_{1}\) be the width of the widest part of the water filter. Because we are trying to get the best fitting
+        cone,
+        we can assume a couple of things. For one, the widest part will be touching the cone. We also will want the
+        widest part
+        at the widest part of the cone, the base, so we don’t waste space. Following along that line of thought, the
+        base of the
+        cone will have a diameter of \(d_{1}\). Let \(r_{1}\) be the radius; \(r_{1} = \frac{d_{1}}{2}\).</p>
+
+    <p>On the other end, \(r_{2}\) is the length of the furthest part of the end to the center of the cone. Like before,
+        because we are trying to get the best fitting cone, we can assume two things: The furthest part from the center
+        on this
+        end will be touching the cone, and, as a result, the width of the cone there is the distance to the center and
+        out
+        again. \(2r_{2} = d_{2}\).</p>
 </body>
 
 </html>
