@@ -39,6 +39,11 @@
             font-family: Muli, sans-serif;
         }
 
+        .imageCaption {
+            font-style: italic;
+            text-align: center;
+        }
+
         input {
             font-family: Muli, monospace;
         }
@@ -47,6 +52,12 @@
         input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            width: 50%;
         }
     </style>
 
@@ -169,8 +180,13 @@
         cone is
         the same height as the water filter it packages, it will not fit.</p>
 
+    <br>
+
     <img src="./docs/assets/images/waterFilterConeBookErrorExample.png"
         alt="A diagram with an 'I' shape in blue. The top line of the 'I' is shorter than the bottom and the ends of the lines are connected by a line which starts at the bottom and extends to the middle.">
+
+    <p class="imageCaption">The orange lines representing the cone go through the blue lines representing the water
+        filter.</p>
 </body>
 
 </html>
