@@ -42,6 +42,7 @@
         .imageCaption {
             font-style: italic;
             text-align: center;
+            padding-bottom: 20px;
         }
 
         input {
@@ -57,7 +58,9 @@
         img {
             display: block;
             margin: auto;
-            width: 50%;
+            max-width: 50%;
+            max-height: 25%;
+            padding-top: 20px;
         }
     </style>
 
@@ -180,13 +183,41 @@
         cone is
         the same height as the water filter it packages, it will not fit.</p>
 
-    <br>
-
     <img src="./docs/assets/images/waterFilterConeBookErrorExample.png"
-        alt="A diagram with an 'I' shape in blue. The top line of the 'I' is shorter than the bottom and the ends of the lines are connected by a line which starts at the bottom and extends to the middle.">
+        alt="A diagram with an 'I' shape in blue. The top line of the 'I' is shorter than the bottom, and a line connects the bottom edge of the 'I' to the center at the top of it.">
 
     <p class="imageCaption">The orange lines representing the cone go through the blue lines representing the water
         filter.</p>
+    <p>Because the method the curriculum gave us, using the water filter’s height, does not work, I found a way to find
+        a good
+        guess of the dimensions to use in simple situations that are realistic, including when the water filter is a
+        cylinder.</p>
+
+    <img src="./docs/assets/images/waterFilterConeCorrectConeExample.png"
+        alt="The same 'I' as before but with the line connecting the to the edge of the top of th 'I' not the center.">
+
+    <p class="imageCaption">The orange lines representing the cone go around and package the blue lines representing the
+        water filter.</p>
+
+    <p>How do you do that though? How can one find the necessary height of the cone? I had not taken Geometry. In fact,
+        I was
+        taking Eighth Grade Math. Because of this, linear equations were on my mind, and I realized that that was how I
+        could
+        solve this. If the water filter is put on a graph, the water filter starts at the origin, and how high the cone
+        will
+        need to be a certain distance from the bottom corner is known, then how high the cone will need to be everywhere
+        is
+        known!</p>
+
+    <img src="./docs/assets/images/waterFilterConeLinearLineMethodExample.png"
+        alt="The same diagram as before but the line continues past the top of the 'I'. A green dotted line extends the center of the 'I' upward to meet the other line.">
+
+    <p class="imageCaption">Where the cone (represented in two dimensions) crosses the center, the highest point, the
+        point’s y-value is the height
+        of the cone.</p>
+
+
+
 </body>
 
 </html>
