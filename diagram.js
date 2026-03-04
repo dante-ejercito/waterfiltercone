@@ -1,8 +1,8 @@
-var storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"))
+storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"));
 
-window.setInterval(getOrUpdateStoredValuesForDiagram, 1000);
+setInterval(updateStoredValuesForDiagram, 499);
 
-function getOrUpdateStoredValuesForDiagram() {
+function updateStoredValuesForDiagram() {
     storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"));
 }
 
