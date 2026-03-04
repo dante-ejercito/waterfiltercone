@@ -70,7 +70,7 @@
     </style>
 </head>
 
-<body>
+<body onload="showDiagram()">
     <h1 style="width: 100vw;">Water Filter Cone Calculator</h1>
 
     <br>
@@ -102,13 +102,26 @@
     </div>
 
     <script>
-        if (sessionStorage.getItem("isFirstLoad") == false) {
-            const storedValuesForCalculateSum = JSON.parse(sessionStorage.getItem("storedValuesString"));
-            document.getElementById("waterFilterHeight").textContent = storedValuesForCalculateSum.h;
-            document.getElementById("r1").textContent = storedValuesForCalculateSum.r1;
-            document.getElementById("r2").textContent = storedValuesForCalculateSum.r2;
+
+        function showDiagram() {
+            if (sessionStorage.getItem("isFirstLoad") == false) {
+                calculateSum();
+
+                showImage();
+            }
         }
 
+        function refillInputs() {
+            if (sessionStorage.getItem("isFirstLoad") == false) {
+                alert("isFirstLoad = false");
+
+                const storedValuesForCalculateSum = JSON.parse(sessionStorage.getItem("storedValuesString"));
+                document.getElementById("waterFilterHeight").value = storedValuesForCalculateSum.h;
+                document.getElementById("waterFilterHeight").textContent = storedValuesForCalculateSum.h;
+                document.getElementById("r1").textContent = storedValuesForCalculateSum.r1;
+                document.getElementById("r2").textContent = storedValuesForCalculateSum.r2;
+            }
+        }
 
         function calculateAndShowDiagram() {
             /* if (document.getElementById('waterFilterHeight').value == "" ||
