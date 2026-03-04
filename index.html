@@ -146,7 +146,8 @@ display: none;
                 return
             } */
 
-            if (sessionStorage.getItem("isFirstLoad") == undefined) {
+   
+        if (sessionStorage.getItem("isFirstLoad") == undefined) {
                 setInitialStoredValues();
 
                 calculateSumFirstLoad();
@@ -391,6 +392,64 @@ display: none;
     <h2>What About Cylinder-shaped Water Filters?</h2>
 
     <h3>Volume</h3>
+
+    <p>
+        Some water filters are shaped in a way that it is best to think of them as a cylinder with something sticking out the top. As long as that top part is smaller than the “cylinder” part, the following method can be used.</p>
+
+    <p>
+        We will imagine the cylinder expands up to the height of the top part. Because the width of the cylinder is the same at all points, \(r_{1}\) and \(r_{2}\) are the same. In order to make a cone around the cylinder, then, we will need to pretend that \(r_{1}\) is \(l\) longer. Where our equation refers to \(r_{1}\), we will add  \(l\) there.
+
+$$V = \frac{\pi h \left( r_{1} + l \right)^{3}}{3 \left( r_{1} +l - r_{2} \right)}$$</p>
+
+    <p>
+        Because r_{1} and r_{2} are the same, they cancel out.
+
+$$V = \frac{\pi h \left( r_{1} + l \right)^{3}}{3 l}$$</p>
+
+    <p>
+        If you graph the volume as a function of \(l\), it will create a parabola. This is because if \(l\) is too high, then there is a lot of extra area on the sides. If \(l\) is too small, there is a lot of extra area on the top. The value of \(l\) at the minimum of the parabola is the best amount to add to the radius of the cylinder, because that is where the volume of the cone is least, meaning that is the best fit.</p>
+
+    <h3>Surface Area</h3>
+
+    <p>
+        We can do the same thing for our surface area equation. Add the value of \(l\) that we found before to \(r_{1}\).
+
+$$S A = \pi \left( r_{1} + l \right) \left( r_{1} + l + \sqrt{h^{2} + \left( r_{1} + l \right)^{2} \right)$$</p>
+
+    <h2>Does Graphing It Work, Though?</h2>
+
+    <p>
+        During a conversation with my uncle, Rober Read, he showed me another method using similar triangles.</p>
+
+    <img src="./docs/assets/images/waterFilterConeSimilarTrianglesMethodExample.png" alt="A triangle">
+
+    <p class="imageCaption">
+        Diagram made by Robert Reed.
+    </p>
+
+    <p>
+        Similar triangles have the same ratios.
+
+$$\frac{r_{2}{x} = \frac{r_{1}{\left(h + x \right}$$
+$$r_{2} = \frac{x r_{1}}{\left( h + x \right)}$$
+$$r_{2} \left( h + x \right) = x r_{1}$$
+$$r_{2} h + r_{2} x = x r_{1}$$
+$$r_{2} h - x r_{1} - r_{2} x$$
+$$r_{2} h = x \left( r_{1} - r_{2} \right)$$
+$$\frac{r_{2} h}{\left( r_{1} - r_{2} \right)} = x$$</p>
+
+    <p>
+        We can now plug in what we found for x in the equation for the height of the cone. 
+
+$$H = h + \frac{r_{2} h}{\left( r_{1} - r_{2} \right)}$$</p>
+
+    <p>
+        We can check if the graphing method is correct. We can see if the two equations are equal.
+
+$$\frac{h r_{1}}{\left( r_{1} - r_{2} \right)} = h + \frac{r_{2} h}{\left( r_{1} - r_{2} \right)}$$
+$$h r_{1} = h \left( r_{1} - r_{2} \right) + h r_{2}$$
+$$h r_{1} = h r_{1} - h r_{2} + h r_{2}$$
+$$h r_{1} = h r_{1}$$</p>
 </body>
 
 </html>
