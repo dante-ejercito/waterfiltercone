@@ -1,6 +1,7 @@
 storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"));
 
 setInterval(updateStoredValuesForDiagram, 499);
+setInterval(windowResized, 499);
 
 function updateStoredValuesForDiagram() {
     storedValuesForDiagram = JSON.parse(sessionStorage.getItem("storedValuesString"));
@@ -13,7 +14,6 @@ function setup() {
         var canvasWidth = windowWidth / 2;
     }
 
-    console.log(storedValuesForDiagram.textSideHeight);
     var canvasHeight = storedValuesForDiagram.textSideHeight;
     var canvas = createCanvas(canvasWidth, canvasHeight);
     canvas.parent("diagramSide");
