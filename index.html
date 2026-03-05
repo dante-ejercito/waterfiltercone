@@ -14,7 +14,7 @@
         body {
             overflow-x: hidden;
         }
-        
+
         .flex-container {
             display: flex;
             flex-direction: row;
@@ -74,14 +74,16 @@
         }
 
         .example::-webkit-scrollbar {
-display: none;
-}
+            display: none;
+        }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.example {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .example {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
     </style>
 </head>
 
@@ -146,8 +148,8 @@ display: none;
                 return
             } */
 
-   
-        if (sessionStorage.getItem("isFirstLoad") == undefined) {
+
+            if (sessionStorage.getItem("isFirstLoad") == undefined) {
                 setInitialStoredValues();
 
                 calculateSumFirstLoad();
@@ -271,8 +273,10 @@ display: none;
         filter.</p>
     <p>Because the method the curriculum gave us, using the water filter’s height, does not work, I found a way to find
         a good
-        guess of the dimensions to use in simple situations that are realistic, including when the water filter is a
-        cylinder.</p>
+        <span style="text-decoration-line: underline">guess</span> of the dimensions to use in simple situations that
+        are realistic, including when the water filter is a
+        cylinder.
+    </p>
 
     <img src="./docs/assets/images/waterFilterConeCorrectConeExample.png"
         alt="The same 'I' as before but with the line connecting the to the edge of the top of th 'I' not the center.">
@@ -325,7 +329,7 @@ display: none;
         other
         end of the water filter. \(p_{1}\) and \(p_{2}\) are both on the “left”.</p>
 
-    <p>The water filter can now be represented on a graph. \(p_{1}\) should be positioned at (0,0).\(p_{2}\) is
+    <p>The water filter can now be represented on a graph. \(p_{1}\) should be positioned at (0,0). \(p_{2}\) is
         \(r_{2}\) away
         from the center, \(r_{1}\), so \(r_{1} - r_{2}\) is \(p_{2}\)’s x-coordinate. \(p_{2}\) is on top, so
         \(p_{2}\)’s
@@ -337,7 +341,9 @@ display: none;
         alt="The same 'I' with the bottom labeled 'd1' and the top labeled 'd2'. On the left edge of the top and bottom lines are 'p1' and 'p2', respectivly.">
 
     <p>The equation of the line that goes through the edge of the widest points (see third image of “Backround”) can be
-        found using the equation \(y = m x + b\). \(p_{1}\) is at the origin.
+        found using the equation \(y = m x + b\). </p>
+
+    <p>\(p_{1}\) is at the origin.
 
         $$b = 0$$</p>
 
@@ -380,12 +386,13 @@ display: none;
 
     <p>We can also find the surface area, \(S A\). The formula to find the surface area of a cone is \(S A = \pi r
         \left( r +
-        \sqrt{h^1 + r^2} \right)\). Again, we said the radius of the base of the cone, \(r\), is \(r_{1}\). The \(h\) in the
+        \sqrt{h^1 + r^2} \right)\). Again, we said the radius of the base of the cone, \(r\), is \(r_{1}\). The \(h\) in
+        the
         formula
         refers to the height of the cone \(H\), not the height of the water filter, \(h\). Now we just plug in the
         values.
 
-        $$S A = \pi r_{1} \left( r_{1} + \sqrt{ \left( \frac{\pi h r_{1}^{3}}{3 \left( r_{1} - r_{2} \right)} \right)^2
+        $$S A = \pi r_{1} \left( r_{1} + \sqrt{ \left( \frac{h r_{1}}{\left( r_{1} - r_{2} \right)} \right)^2
         +
         r_1^2} \right)$$</p>
 
@@ -394,25 +401,35 @@ display: none;
     <h3>Volume</h3>
 
     <p>
-        Some water filters are shaped in a way that it is best to think of them as a cylinder with something sticking out the top. As long as that top part is smaller than the “cylinder” part, the following method can be used.</p>
+        Some water filters are shaped in a way that it is best to think of them as a cylinder with something sticking
+        out the top. As long as that top part is smaller than the “cylinder” part, the following method can be used.</p>
 
     <p>
-        We will imagine the cylinder expands up to the height of the top part. Because the width of the cylinder is the same at all points, \(r_{1}\) and \(r_{2}\) are the same. In order to make a cone around the cylinder, then, we will need to pretend that \(r_{1}\) is \(l\) longer. Where our equation refers to \(r_{1}\), we will add  \(l\) there.
+        We will imagine the cylinder expands up to the height of the top part. Because the width of the cylinder is the
+        same at all points, \(r_{1}\) and \(r_{2}\) are the same. In order to make a cone around the cylinder, then, we
+        will need to pretend that \(r_{1}\) is \(l\) longer. Where our equation refers to \(r_{1}\), we will add \(l\)
+        there.
 
-$$V = \frac{\pi h \left( r_{1} + l \right)^{3}}{3 \left( r_{1} +l - r_{2} \right)}$$</p>
+        $$V = \frac{\pi h \left( r_{1} + l \right)^{3}}{3 \left( r_{1} +l - r_{2} \right)}$$</p>
 
     <p>
         Because r_{1} and r_{2} are the same, they cancel out.
 
-$$V = \frac{\pi h \left( r_{1} + l \right)^{3}}{3 l}$$</p>
+        $$V = \frac{\pi h \left( r_{1} + l \right)^{3}}{3 l}$$</p>
 
     <p>
-        If you graph the volume as a function of \(l\), it will create a parabola. This is because if \(l\) is too high, then there is a lot of extra area on the sides. If \(l\) is too small, there is a lot of extra area on the top. The value of \(l\) at the minimum of the parabola is the best amount to add to the radius of the cylinder, because that is where the volume of the cone is least, meaning that is the best fit.</p>
+        If you graph the volume as a function of \(l\), it will create a parabola. This is because if \(l\) is too high,
+        then there is a lot of extra area on the sides. If \(l\) is too small, there is a lot of extra area on the top.
+        The value of \(l\) at the minimum of the parabola is the best amount to add to the radius of the cylinder,
+        because that is where the volume of the cone is least, meaning that is the best fit.</p>
 
     <h3>Surface Area</h3>
 
     <p>
-        We can do the same thing for our surface area equation. Add the value of \(l\) that we found before to \(r_{1}\). $$ S A = \pi \left( r_{1} + l \right) \left( r_{1} + l + \sqrt{h^{2} + \left( r_{1} + l \right)^{2} \right)$$</p>
+        We can do the same thing for our surface area equation. Add the value of \(l\) that we found before to
+        \(r_{1}\). $$S A = \pi \left( r_{1} + l \right) \left( r_{1} + l + \sqrt{\left( \frac{h \left( r_{1} + l
+        \right)}{l} \right)^{2} + \left( r_{1} + l \right)^{2}}
+        \right)$$</p>
 
     <h2>Does Graphing It Work, Though?</h2>
 
@@ -425,22 +442,57 @@ $$V = \frac{\pi h \left( r_{1} + l \right)^{3}}{3 l}$$</p>
         Diagram made by Robert Reed.
     </p>
 
-    <p>
-        Similar triangles have the same ratios. $$\frac{r_{2}{x} = \frac{r_{1}{\left(h + x \right}$$
-$$r_{2} = \frac{x r_{1}}{\left( h + x \right)}$$ $$r_{2} \left( h + x \right) = x r_{1}$$ $$r_{2} h + r_{2} x = x r_{1}$$ $$r_{2} h - x r_{1} - r_{2} x$$ $$r_{2} h = x \left( r_{1} - r_{2} \right)$$ $$\frac{r_{2} h}{\left( r_{1} - r_{2} \right)} = x$$</p>
+    <p>$$H = h + x$$</p>
 
     <p>
-        We can now plug in what we found for x in the equation for the height of the cone. 
+        Similar triangles have the same ratios.
+        $$\frac{r_{2}}{x} = \frac{r_{1}}{\left( h + x \right)}$$
+        $$r_{2} = \frac{x r_{1}}{\left( h + x \right)}$$
+        $$r_{2} \left( h + x \right) = x r_{1}$$
+        $$r_{2} h + r_{2} x = x r_{1}$$
+        $$r_{2} h = x r_{1} - r_{2} x$$
+        $$r_{2} h = x \left( r_{1} - r_{2} \right)$$
+        $$\frac{r_{2} h}{\left( r_{1} - r_{2} \right)} = x$$</p>
 
-$$H = h + \frac{r_{2} h}{\left( r_{1} - r_{2} \right)}$$</p>
+    <p>
+        We can now plug in what we found for x in the equation for the height of the cone.
+
+        $$H = h + \frac{r_{2} h}{\left( r_{1} - r_{2} \right)}$$</p>
 
     <p>
         We can check if the graphing method is correct. We can see if the two equations are equal.
 
-$$\frac{h r_{1}}{\left( r_{1} - r_{2} \right)} = h + \frac{r_{2} h}{\left( r_{1} - r_{2} \right)}$$
-$$h r_{1} = h \left( r_{1} - r_{2} \right) + h r_{2}$$
-$$h r_{1} = h r_{1} - h r_{2} + h r_{2}$$
-$$h r_{1} = h r_{1}$$</p>
+        $$\frac{h r_{1}}{\left( r_{1} - r_{2} \right)} = h + \frac{r_{2} h}{\left( r_{1} - r_{2} \right)}$$
+        $$h r_{1} = h \left( r_{1} - r_{2} \right) + h r_{2}$$
+        $$h r_{1} = h r_{1} - h r_{2} + h r_{2}$$
+        $$h r_{1} = h r_{1}$$</p>
+
+    <p>They are, in fact, the same. Both methods find the same height of the cone.</p>
+
+    <h2>Final Thoughts</h2>
+
+    <p>I said at the beginning that this is all a guess. What happens when \(r_{1}\) is too close to \(r_{2}\)? There is
+        too
+        much area at the top! The method falls apart. One would be better off making the base wider or turning the water
+        filter
+        some other orientation. Which leads to another thing: This method only finds the cone using the widest parts in
+        that
+        orientation. The choices made here probably work for water filters, however it just would not work for just any
+        shape.
+        This method is very not generic. Throughout this explanation, the word “usually” comes up a lot.</p>
+
+    <p>Another thing: if the material has any thickness, the cone will not fit. However, that goes for every other shape
+        we
+        found the dimensions for. It was ignored for the other shapes so it is probaly okay to ignore it here to. For
+        the sake of simplicity, let’s just say that the dimensions refer to the inside of
+        the
+        packaging.</p>
+
+    <p>Still, despite my method’s shortcomings, I like to think that it is a good try. It ended up working just as well
+        as, and
+        in fact the same as, using similar triangles. For its use case, I feel it does what it has to. It is remarkable
+        what
+        good hunting a few shots in the dark can get you.</p>
 </body>
 
 </html>
