@@ -39,7 +39,7 @@ function draw() {
     if (storedValuesForDiagram.H >= storedValuesForDiagram.r1) {
         var scaler = height * .75 / storedValuesForDiagram.H;
     } else {
-        var scaler = width * .75 / storedValuesForDiagram.r1;
+        var scaler = width * .65 / storedValuesForDiagram.r1;
     }
 
     var centerOfCanvas = width / 2;

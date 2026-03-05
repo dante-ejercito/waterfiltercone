@@ -139,22 +139,25 @@
                 return
             }
 
+            if (document.getElementById('waterFilterHeight').value <= 0 ||
+                document.getElementById('r1').value <= 0 ||
+                document.getElementById('r2').value <= 0) {
+                alert("All values must be positive.")
+                return
+            }
+
+            if (document.getElementById("r2").value >= document.getElementById("r1").value) {
+                alert("r1 must be greater than r2.");
+                return
+            }
+
             setInitialStoredValues();
 
-            calculateSumFirstLoad();
+            calculateSum();
 
             storeValuesInSessionStorage();
 
             showImage();
-        }
-
-        function showImage() {
-            document.getElementById("diagramSide").style.display = "inline";
-
-            if (window.innerWidth > 600) {
-                document.getElementsByClassName("flex-item")[0].style.width = "50%";
-                document.getElementsByClassName("flex-item")[1].style.width = "50%";
-            }
         }
 
         const storedValues = {
@@ -194,12 +197,7 @@
             storedValues.foundTextSideHeight = document.getElementById("textSide").clientHeight;
         }
 
-        function storeValuesInSessionStorage() {
-            const storedValuesString = JSON.stringify(storedValues);
-            sessionStorage.setItem("storedValuesString", storedValuesString);
-        }
-
-        function calculateSumFirstLoad() {
+        function calculateSum() {
             const h = storedValues.h;
             const r1 = storedValues.r1;
             const r2 = storedValues.r2;
@@ -214,22 +212,19 @@
             document.getElementById('volume-display').textContent = V;
         }
 
-        function calculateSum() {
-            const storedValuesForCalculateSum = JSON.parse(sessionStorage.getItem("storedValuesString"));
-
-            const h = storedValuesForCalculateSum.h;
-            const r1 = storedValuesForCalculateSum.r1;
-            const r2 = storedValuesForCalculateSum.r2;
-
-            const H = h * r1 / (r1 - r2);
-            const B = Math.PI * (r1 / 2) ** 2;
-            const V = B * H * (1 / 3);
-
-            document.getElementById('cone-height-display').textContent = H;
-            document.getElementById('cone-base-area-display').textContent = B;
-            document.getElementById('volume-display').textContent = V;
+        function storeValuesInSessionStorage() {
+            const storedValuesString = JSON.stringify(storedValues);
+            sessionStorage.setItem("storedValuesString", storedValuesString);
         }
 
+        function showImage() {
+            document.getElementById("diagramSide").style.display = "inline";
+
+            if (window.innerWidth > 600) {
+                document.getElementsByClassName("flex-item")[0].style.width = "50%";
+                document.getElementsByClassName("flex-item")[1].style.width = "50%";
+            }
+        }
     </script>
 
     <h2>Backround</h2>
